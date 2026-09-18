@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-ink: #0a0a0b;
+  --color-ink-soft: #17171a;
+  --color-ink-line: #2a2a2e;
+
+  --color-gold: #c9a227;
+  --color-gold-light: #e6c65c;
+  --color-gold-dark: #96791c;
+
+  --color-surface: #ffffff;
+  --color-muted: #f6f5f2;
+  --color-muted-line: #e7e5df;
+
+  --color-body: #4b4b4f;
+  --color-body-soft: #6f6f74;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-ink-line: var(--color-ink-line);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-gold-dark: var(--color-gold-dark);
+
+  --color-surface: var(--color-surface);
+  --color-muted: var(--color-muted);
+  --color-muted-line: var(--color-muted-line);
+
+  --color-body: var(--color-body);
+  --color-body-soft: var(--color-body-soft);
+
+  --font-sans: var(--font-space-grotesk);
+  --font-heading: var(--font-space-grotesk);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface);
+  color: var(--color-body);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.bg-gold-gradient {
+  background-image: linear-gradient(135deg, var(--color-gold-light), var(--color-gold) 55%, var(--color-gold-dark));
+}
+
+.bg-noise-lines {
+  background-image: repeating-linear-gradient(
+    115deg,
+    rgba(201, 162, 39, 0.05) 0px,
+    rgba(201, 162, 39, 0.05) 1px,
+    transparent 1px,
+    transparent 64px
+  );
 }

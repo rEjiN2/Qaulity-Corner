@@ -8,7 +8,8 @@ import { ChevronDown, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils/cn";
 import { FacebookIcon, InstagramIcon } from "@/components/icons/social-icons";
-import { navItems, headerNavLeft, headerNavRight, contactInfo } from "@/lib/constants/site";
+import { MobileMenu } from "@/components/layout/mobile-menu";
+import { headerNavLeft, headerNavRight, contactInfo } from "@/lib/constants/site";
 
 function NavLink({
   href,
@@ -75,14 +76,18 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-ink/60">
-      <Container className="relative grid h-24 grid-cols-[1fr_auto_1fr] items-center">
-        <nav className="hidden items-center gap-8 lg:flex">
+      <Container className="relative z-50 grid h-24 grid-cols-[1fr_auto_1fr] items-center">
+        <nav className="col-start-1 hidden items-center gap-8 lg:flex">
           {headerNavLeft.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} isActive={isItemActive(item.href)} />
           ))}
         </nav>
 
-        <Link href="/" className="flex items-center justify-self-center" onClick={() => setIsOpen(false)}>
+        <Link
+          href="/"
+          className="col-start-2 flex items-center justify-self-center"
+          onClick={() => setIsOpen(false)}
+        >
           <Image
             src="/logo.png"
             alt={contactInfo.shortName}
@@ -93,7 +98,7 @@ export function SiteHeader() {
           />
         </Link>
 
-        <div className="flex items-center justify-end gap-2">
+        <div className="col-start-3 flex items-center justify-end gap-2">
           <nav className="hidden items-center gap-8 lg:flex">
             {headerNavRight.map((item) => (
               <NavLink key={item.href} href={item.href} label={item.label} isActive={isItemActive(item.href)} />
@@ -114,39 +119,7 @@ export function SiteHeader() {
 
       <TopBar />
 
-      {isOpen ? (
-        <div className="border-t border-white/10 bg-ink/95 lg:hidden">
-          <Container className="flex flex-col gap-1 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "rounded-[5px] px-3 py-3 text-sm font-medium transition-colors",
-                  isItemActive(item.href) ? "text-gold-light" : "text-white/90 hover:bg-white/10"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <div className="mt-3 flex items-center gap-4 border-t border-white/10 px-3 pt-4 text-white/70">
-              <a href={contactInfo.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <FacebookIcon className="h-4 w-4" />
-              </a>
-              <a href={contactInfo.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <InstagramIcon className="h-4 w-4" />
-              </a>
-              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <MessageCircle className="h-4 w-4" />
-              </a>
-              <a href={`tel:${contactInfo.phone}`} className="ml-auto text-sm font-medium">
-                {contactInfo.phoneDisplay}
-              </a>
-            </div>
-          </Container>
-        </div>
-      ) : null}
+      <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} isItemActive={isItemActive} />
     </header>
   );
 }

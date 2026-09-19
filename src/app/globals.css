@@ -15,6 +15,27 @@
 
   --color-body: #4b4b4f;
   --color-body-soft: #6f6f74;
+
+  /* shadcn-style semantic tokens, mapped to the brand palette above so
+     components authored against the shadcn convention pick up our
+     black/gold theme automatically instead of shadcn's own defaults. */
+  --background: #ffffff;
+  --foreground: #0a0a0b;
+  --card: #ffffff;
+  --card-foreground: #0a0a0b;
+  --primary: #c9a227;
+  --primary-foreground: #0a0a0b;
+  --secondary: #f6f5f2;
+  --secondary-foreground: #0a0a0b;
+  --muted: #f6f5f2;
+  --muted-foreground: #6f6f74;
+  --accent: #f6f5f2;
+  --accent-foreground: #0a0a0b;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: #e7e5df;
+  --input: #e7e5df;
+  --ring: #c9a227;
 }
 
 @theme inline {
@@ -33,8 +54,26 @@
   --color-body: var(--color-body);
   --color-body-soft: var(--color-body-soft);
 
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-space-grotesk);
   --font-heading: var(--font-space-grotesk);
+  --font-serif: var(--font-space-grotesk);
 }
 
 body {

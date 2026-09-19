@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -24,15 +25,26 @@ export function HomeAboutTeaser() {
             </div>
           </div>
 
-          <div className="rounded-[5px] border border-muted-line bg-muted p-8">
-            <p className="font-heading text-sm font-semibold uppercase tracking-widest text-gold-dark">
-              Our Expertise
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-body">
-              Dumper Trucks, Tipper Trucks, Mercedes-Benz Actros, Iveco Power Star, MAN, Isuzu,
-              Renault, and many other European, Japanese, and Korean passenger and commercial
-              vehicle brands.
-            </p>
+          <div className="flex flex-col gap-5">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[5px]">
+              <Image
+                src="/parts1.jpg"
+                alt="Close-up of precision automotive engine components"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="rounded-[5px] border border-muted-line bg-muted p-8">
+              <p className="font-heading text-sm font-semibold uppercase tracking-widest text-gold-dark">
+                Our Expertise
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-body">
+                Dumper Trucks, Tipper Trucks, Mercedes-Benz Actros, Iveco Power Star, MAN, Isuzu,
+                Renault, and many other European, Japanese, and Korean passenger and commercial
+                vehicle brands.
+              </p>
+            </div>
           </div>
         </div>
       </Container>

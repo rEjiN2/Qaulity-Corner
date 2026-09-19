@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { CheckCircle2, PhoneCall } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { ParallaxImage } from "@/components/motion/parallax-image";
 import { contactInfo } from "@/lib/constants/site";
 
 const highlights = [
@@ -13,11 +13,11 @@ const highlights = [
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-ink text-white">
-      <Image
+      <ParallaxImage
         src="/home-banner.png"
         alt="Genuine and aftermarket auto spare parts on display in a professional workshop"
-        fill
         priority
+        offset={70}
         className="object-cover object-[75%_center]"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />

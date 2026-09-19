@@ -2,26 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { getBreadcrumbJsonLd } from "@/lib/seo/structured-data";
 
 export function PageHeader({
   title,
   description,
+  image = "/home-banner.png",
+  path,
 }: {
   title: string;
   description?: string;
+  image?: string;
+  path: string;
 }) {
+  const breadcrumbJsonLd = getBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: title, path },
+  ]);
+
   return (
-    <section className="relative overflow-hidden bg-ink text-white">
+    <section className="relative flex min-h-[580px] items-center overflow-hidden bg-ink text-white sm:min-h-[640px] lg:min-h-[760px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <Image
-        src="/home-banner.png"
+        src={image}
         alt=""
         fill
         priority
-        className="object-cover object-center opacity-30"
+        className="object-cover object-center opacity-60"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/95 to-ink/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/50 to-ink/30" />
 
-      <Container className="relative pb-16 pt-36 sm:pb-20 sm:pt-40 lg:pt-52">
+      <Container className="relative py-16">
         <nav className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white/50">
           <Link href="/" className="transition-colors hover:text-gold-light">
             Home

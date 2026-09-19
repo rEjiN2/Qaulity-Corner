@@ -10,6 +10,7 @@ export interface ProductCategory {
   title: string;
   description: string;
   icon: LucideIcon;
+  image: string;
 }
 
 export interface VehicleBrand {

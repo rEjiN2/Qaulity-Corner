@@ -21,7 +21,7 @@ export function PageHeader({
   ]);
 
   return (
-    <section className="relative flex min-h-[580px] items-center overflow-hidden bg-ink text-white sm:min-h-[640px] lg:min-h-[760px]">
+    <section className="relative flex min-h-[620px] items-center overflow-hidden bg-ink text-white sm:min-h-[680px] lg:min-h-[760px]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

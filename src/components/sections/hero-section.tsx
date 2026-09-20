@@ -23,7 +23,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
 
-      <Container className="relative pb-24 pt-40 sm:pb-28 sm:pt-44 lg:pb-36 lg:pt-60">
+      <Container className="relative pb-24 pt-48 sm:pb-28 sm:pt-52 lg:pb-36 lg:pt-60">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-[5px] border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-gold-light">
             Auto Spare Parts Trading L.L.C.

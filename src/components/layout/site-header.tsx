@@ -35,32 +35,32 @@ function NavLink({
 
 function TopBar() {
   return (
-    <div className="hidden border-t border-white/10 bg-black/40 lg:block">
-      <Container className="flex h-10 items-center justify-between text-xs text-white/70">
-        <div className="flex items-center gap-4">
+    <div className="border-t border-white/10 bg-black/40">
+      <Container className="flex h-9 items-center justify-between text-[11px] text-white/70 sm:h-10 sm:text-xs">
+        <div className="flex items-center gap-3 sm:gap-4">
           <a href={contactInfo.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-colors hover:text-gold-light">
-            <FacebookIcon className="h-3.5 w-3.5" />
+            <FacebookIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
           </a>
           <a href={contactInfo.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-colors hover:text-gold-light">
-            <InstagramIcon className="h-3.5 w-3.5" />
+            <InstagramIcon className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
           </a>
           <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="transition-colors hover:text-gold-light">
-            <MessageCircle className="h-3.5 w-3.5" />
+            <MessageCircle className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
           </a>
         </div>
 
-        <div className="flex items-center gap-6">
-          <span className="flex items-center gap-1 font-medium uppercase tracking-wide">
+        <div className="flex items-center gap-3 sm:gap-6">
+          <span className="hidden items-center gap-1 font-medium uppercase tracking-wide sm:flex">
             EN
             <ChevronDown className="h-3 w-3" />
           </span>
-          <a href={`tel:${contactInfo.phone}`} className="flex items-center gap-2 transition-colors hover:text-gold-light">
-            <Phone className="h-3.5 w-3.5" />
-            {contactInfo.phoneDisplay}
+          <a href={`tel:${contactInfo.phone}`} className="flex items-center gap-1.5 transition-colors hover:text-gold-light sm:gap-2">
+            <Phone className="h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5" />
+            <span className="whitespace-nowrap">{contactInfo.phoneDisplay}</span>
           </a>
-          <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 transition-colors hover:text-gold-light">
-            <Mail className="h-3.5 w-3.5" />
-            {contactInfo.email}
+          <a href={`mailto:${contactInfo.email}`} className="hidden items-center gap-2 transition-colors hover:text-gold-light sm:flex">
+            <Mail className="h-3.5 w-3.5 shrink-0" />
+            <span className="whitespace-nowrap">{contactInfo.email}</span>
           </a>
         </div>
       </Container>

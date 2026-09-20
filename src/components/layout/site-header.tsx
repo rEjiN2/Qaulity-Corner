@@ -76,8 +76,8 @@ export function SiteHeader() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-ink/60">
-      <Container className="relative z-50 grid h-24 grid-cols-[1fr_auto_1fr] items-center">
-        <nav className="col-start-1 hidden items-center gap-8 lg:flex">
+      <Container className="relative z-50 flex h-24 items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr]">
+        <nav className="hidden items-center gap-8 lg:col-start-1 lg:flex">
           {headerNavLeft.map((item) => (
             <NavLink key={item.href} href={item.href} label={item.label} isActive={isItemActive(item.href)} />
           ))}
@@ -85,7 +85,7 @@ export function SiteHeader() {
 
         <Link
           href="/"
-          className="col-start-2 flex items-center justify-self-center"
+          className="flex items-center lg:col-start-2 lg:justify-self-center"
           onClick={() => setIsOpen(false)}
         >
           <Image
@@ -93,12 +93,12 @@ export function SiteHeader() {
             alt={contactInfo.shortName}
             width={84}
             height={84}
-            className="h-20 w-20 object-contain lg:h-24 lg:w-24"
+            className="h-16 w-16 object-contain sm:h-20 sm:w-20 lg:h-24 lg:w-24"
             priority
           />
         </Link>
 
-        <div className="col-start-3 flex items-center justify-end gap-2">
+        <div className="flex items-center justify-end gap-2 lg:col-start-3">
           <nav className="hidden items-center gap-8 lg:flex">
             {headerNavRight.map((item) => (
               <NavLink key={item.href} href={item.href} label={item.label} isActive={isItemActive(item.href)} />

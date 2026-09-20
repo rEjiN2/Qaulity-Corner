@@ -21,7 +21,7 @@ export const siteConfig = {
   legalName: contactInfo.companyName,
   description:
     "RUKN AL JAWDAH AL THAHABIAH AUTO SPARE PARTS TR L.L.C. is one of the UAE's leading suppliers of Genuine, OEM, and high-quality aftermarket spare parts for commercial and passenger vehicles, serving the GCC and MENA regions.",
-  url: "https://www.qualitycorner.ae",
+  url: "https://www.rukunaljawdah.com",
   locale: "en_AE",
   keywords: [
     "auto spare parts UAE",

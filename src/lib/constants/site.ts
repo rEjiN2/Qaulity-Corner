@@ -8,8 +8,9 @@ export const contactInfo: ContactInfo = {
   phoneDisplay: "+971 56 443 4800",
   whatsapp: "https://wa.me/971564434800",
   email: "rukunaljawdah@gmail.com",
-  address: "Auto Spare Parts Market",
-  city: "Dubai",
+  address:
+    "H.O, Al Jazeera Tower - 1, Al Khalidiya Street, 5th Floor, 157/502 - Al Majaz 3",
+  city: "Sharjah",
   country: "United Arab Emirates",
   mapsUrl: "https://maps.google.com",
   facebookUrl: "https://facebook.com",
